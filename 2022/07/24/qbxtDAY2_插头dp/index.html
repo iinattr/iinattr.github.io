@@ -175,9 +175,34 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="“如果你在浪费时间中获得了快乐-那就不算浪费时间”"><a href="#“如果你在浪费时间中获得了快乐-那就不算浪费时间”" class="headerlink" title="“如果你在浪费时间中获得了快乐 那就不算浪费时间”"></a>“如果你在浪费时间中获得了快乐 那就不算浪费时间”</h1><h2 id="–费曼"><a href="#–费曼" class="headerlink" title="–费曼"></a>–费曼</h2><h2 id="今天也要努力浪费时间呢！"><a href="#今天也要努力浪费时间呢！" class="headerlink" title="今天也要努力浪费时间呢！"></a>今天也要努力浪费时间呢！</h2><ul>
-<li>7.24<br>暑假也要回学校 但是阻挡不了我颓废的步伐！今天在qq群里度过了一整天 许多妹子把我当成妹子而加我 好开心！</li>
-</ul>
+    <section class="markdown-content"><p>5月2日主要内容为树形dp与状压dp</p>
+<p>##感觉今天讲的也没什么可写的qwq<br>但是插头dp我是真没听懂 在此做一些整理</p>
+<p>本篇依例题<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5056%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%8F%92%E5%A4%B4dp%E8%AE%B2%E8%A7%A3">https://www.luogu.com.cn/problem/P5056【模板】插头dp讲解</a></p>
+<p>插头dp是为了解决网格链接性问题的一种算法 由某thu爷发明</p>
+<p>##要素</p>
+<p>###轮廓线<br>插头dp的dp顺序时从上到下 从左向右进行的<br>我们需要一条称之为轮廓线的分界线区分已进行完dp的区域与未进行完dp的区域<br>如图所示：<br><img src="https://cdn.luogu.com.cn/upload/image_hosting/untt4m1c.png"><br>黄线即为轮廓线<br>可以发现 轮廓线长度即m+1<br>我们的大多数dp操作都是以轮廓线为准进行的</p>
+<p>###插头<br>插头表示不同方块的见的链接状态<br>比如格子[i][j]与格子[i][j+1]连通，那么[i][j]就有一个右插头[i][j+1]就有一个左插头</p>
+<p>注意插头一定是成对存在的，它是一种实际状态，即两个格子之间确实连通了，并不是一种“将要连通过去”的虚拟状态。简单的说，产生一对插头，必须要有两个格子“两情相悦”</p>
+<p>###轮廓线的状态<br>容易看出，例题轮廓线上的插头一定是偶数个，我们可以让插头两两配对（因为只有当插头上的点时偶数个时 下面的格子才会有可能链接 </p>
+<p>于是我们将轮廓线上的插头分为两类：左括号插头和右括号插头</p>
+<p>一个左括号插头和一个右括号插头配对，当且仅当：当前状态下，在已考虑部分中，这两个插头所在格子已经连通<br><img src="https://cdn.luogu.com.cn/upload/image_hosting/e6vsy1ky.png"></p>
+<p>图中蓝线就是已考虑部分的一种可能的连通情况（也包括了轮廓线的插头情况），那么此时轮廓线的状态就是：(0)(0)</p>
+<p>我们可以用三进制来表示轮廓线状态，0表示没有插头，1表示左插头，2表示右插头</p>
+<p>三进制的运算非常慢，我们把它变成四进制，然后就可以进行位运算了</p>
+<p>那么轮廓线的连通情况，状态最大值会高达$4^{m+1}$ ，把$m&#x3D;12$代入计算就是67108864，如果要开那么大的数组，显然空间爆炸。幸运的是，在所有情况中，有效情况的数量其实只有20万左右，因此我们可以开一个20万的数组，然后搞一个哈希表来对有效状态编号</p>
+<p>当然，有一些题目不一定要求插头两两配对，比如Park II那道题，具体情况具体分析吧<br>##转移<br>分情况讨论 以本例为例<br>###合并两联通分量<br>如果当前轮廓线上既有右插又有下插，那你只能当前格做左插和上插，要不然就不是回路了。</p>
+<p>然后如果右插和下插联通，那这种情况只能是在最后一个非障碍格是合法的。</p>
+<p>不连通的话，当然这样做会把他们变联通，看图：<br><img src="https://cdn.luogu.com.cn/upload/pic/46353.png"><br>###新建一个连通分量<br>这个情况只出现在转移位置的轮廓线上没有下插头和右插头。<br><img src="https://cdn.luogu.com.cn/upload/pic/46352.png"><br>如图。然后我们只有一种转移方式就是当前格做右插头和下插头。</p>
+<p>括号表示法就是新建一对紧挨着的左右括号。最小表示法就直接解码重编一下。</p>
+<p>###保持原来的连通分量<br>当轮廓线上只有下插或者右插，就只能当前格做一个左插&#x2F;上插来满足回路性质，剩下一个插头是随便安排的。</p>
+<p>图：</p>
+<p><img src="https://cdn.luogu.com.cn/upload/pic/46354.png"></p>
+<p>括号表示法的话就把下插&#x2F;右插对应的括号移到你加的插头上就行了。</p>
+<p>最小表示法也类似，把下插&#x2F;右插位置的记号移到你加的插头对应位置就行（因为是延续了一个连通分量）。</p>
+<p>注意当从一行的最后一个格子转移到下一行的第一个格子的时候，轮廓线需要特殊处理。这个看代码最好解释了。</p>
+<p>（还要多啰嗦一句，一般状态编码的左右和轮廓线的左右是反着对应的……也就是编码最右面一位是对应轮廓线最左面格子）</p>
+<p>( 这样大概比较好写? )</p>
+<p>代码实现略</p>
 </section>
     <!-- Tags START -->
     
@@ -187,7 +212,7 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2022/07/23/%E4%BB%8A%E6%97%A5%E8%AE%A1%E5%88%92/">
+      <a class="nav-left" href="/2022/07/24/SPLAY/">
         <span class="nav-arrow">← </span>
         
           (untitled)
@@ -195,7 +220,7 @@
       </a>
     
     
-      <a class="nav-right" href="/2022/07/24/%E5%8F%AF%E8%83%BD%E6%98%AF%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%A8%A1%E6%9D%BF%E5%85%A8%E5%AE%B6%E6%A1%B6/">
+      <a class="nav-right" href="/2022/07/24/qbxtDAY3/">
         
           (untitled)
         
@@ -230,7 +255,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E2%80%9C%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%9C%A8%E6%B5%AA%E8%B4%B9%E6%97%B6%E9%97%B4%E4%B8%AD%E8%8E%B7%E5%BE%97%E4%BA%86%E5%BF%AB%E4%B9%90-%E9%82%A3%E5%B0%B1%E4%B8%8D%E7%AE%97%E6%B5%AA%E8%B4%B9%E6%97%B6%E9%97%B4%E2%80%9D"><span class="toc-nav-text">“如果你在浪费时间中获得了快乐 那就不算浪费时间”</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E2%80%93%E8%B4%B9%E6%9B%BC"><span class="toc-nav-text">–费曼</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8A%E5%A4%A9%E4%B9%9F%E8%A6%81%E5%8A%AA%E5%8A%9B%E6%B5%AA%E8%B4%B9%E6%97%B6%E9%97%B4%E5%91%A2%EF%BC%81"><span class="toc-nav-text">今天也要努力浪费时间呢！</span></a></li></ol></li></ol>
+      <ol class="nav">none</ol>
     
   </div>
 </aside>
@@ -240,7 +265,7 @@
 
 <script>
   (function () {
-    var url = 'http://iinattr.username.github.io/2022/07/24/日记/';
+    var url = 'http://iinattr.username.github.io/2022/07/24/qbxtDAY2_插头dp/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({

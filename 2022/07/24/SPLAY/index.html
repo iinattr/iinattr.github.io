@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="iinattr&#39;s blog">
+  <meta name="keyword" content="iinattr">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      iinattr
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+
+
+  
+  
+    
+<script src="/js/local-search.js"></script>
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>iinattr</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/series/" class="item-link">Series</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/series/" class="menu-link">Series</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="Please enter your keyword(s) to search." spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2></h2>
+  <p class="post-date">2022-07-24</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>（今天本想讲LCT 但本人TCL 所以大概率讲完会的还是会 不会的还是不会 所以将点简单的 巨神们可以去切题了）</p>
+<h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><p>想必大家都已经十分熟悉二叉搜索树了 它是很好用的数据结构 但二叉搜索树仍存在问题 即当插入数据单调时 搜索树退化成一条链</p>
+<p>这时我们使用一种称为平衡树的数据结构来优化它</p>
+<p>想必大家也已经从那名为ZYX的存在对那AVL的神圣解释中对此十分熟悉啦</p>
+<p>带大家<del>复习</del>一下伸展树</p>
+<h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><p>伸展树作为一种平衡树其时间复杂度并不优秀 但因应用多样而在算法竞赛中广泛使用 较为重要</p>
+<p>支持二叉搜索树全部功能 并因可以无损变换树形结构 是实现动态树（LCT）的基础</p>
+<p>整个过程源于二叉搜索树的实际应用特点：当访问一个数据后大概率还会很快再次访问此数据 所以可以当每次对数据一个操作后 将其旋转到根</p>
+<p>但这样的特点并不普遍（比如毒瘤出题人的毒瘤数据）</p>
+<p>不过在将其旋转到根的过程中 可以实现一平衡操作 即得splay</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>核心是splay操作 即将一点旋转到根</p>
+<p>splay操作由rotate操作恰当组合而成 </p>
+<p>rotate操作即将一节点与其父子关系反向且仍保持二叉查找树性质</p>
+<p>也就是一般常说的单旋操作</p>
+<p>（让我现场画图qwq）</p>
+<p>splay由双rotate旋组成</p>
+<p>如果一节点的父亲与其父亲的父亲在一条直线上 则先rotate其父亲 再rotate其自身</p>
+<p>否则两次rotate其自身</p>
+<p>为什么要这样呢qwq</p>
+<h2 id="显而易见"><a href="#显而易见" class="headerlink" title="显而易见"></a><del>显而易见</del></h2><p>(让我画个图解释一下)</p>
+<p>其余操作非核心 边逐行大声朗读代码边说</p>
+<p>例题P3369普通平衡树<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3369">https://www.luogu.com.cn/problem/P3369</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> siz[<span class="number">100001</span>],ch[<span class="number">100001</span>][<span class="number">2</span>];</span><br><span class="line"><span class="type">int</span> fa[<span class="number">100001</span>],cnt[<span class="number">100001</span>]</span><br><span class="line">,val[<span class="number">100001</span>];</span><br><span class="line"><span class="type">int</span> root=<span class="number">0</span>,N,tot=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushup</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	siz[x]=siz[ch[x][<span class="number">0</span>]]+siz[ch[x][<span class="number">1</span>]]+cnt[x];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">son</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x==ch[fa[x]][<span class="number">0</span>]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rotate</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> y=fa[x];</span><br><span class="line">	<span class="type">int</span> zch=ch[x][!<span class="built_in">son</span>(x)];</span><br><span class="line">	<span class="type">int</span> gr=fa[y];</span><br><span class="line">	<span class="type">bool</span> yy=<span class="built_in">son</span>(y),xx=<span class="built_in">son</span>(x);</span><br><span class="line">	ch[gr][yy]=x;fa[x]=gr;</span><br><span class="line">	ch[x][!xx]=y;fa[y]=x;</span><br><span class="line">	ch[y][xx]=zch;fa[zch]=y;</span><br><span class="line">	<span class="built_in">pushup</span>(y);<span class="built_in">pushup</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">splay</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(fa[x]!=y)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> fat=fa[x];</span><br><span class="line">		<span class="type">int</span> z=fa[fat];</span><br><span class="line">		<span class="keyword">if</span>(z==y)</span><br><span class="line">			<span class="built_in">rotate</span>(x);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">son</span>(fat)==<span class="built_in">son</span>(x)) </span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">rotate</span>(fat);</span><br><span class="line">			<span class="built_in">rotate</span>(x);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">rotate</span>(x);</span><br><span class="line">			<span class="built_in">rotate</span>(x);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(y==<span class="number">0</span>) root=x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> u=root,ff=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(u&amp;&amp;val[u]!=x)</span><br><span class="line">	&#123;</span><br><span class="line">		ff=u;</span><br><span class="line">		u=ch[u][x&gt;val[u]];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(u) cnt[u]++;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		u=++tot;</span><br><span class="line">		<span class="keyword">if</span>(ff)</span><br><span class="line">			ch[ff][x&gt;val[ff]]=u;</span><br><span class="line">		ch[tot][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">		ch[tot][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">		fa[tot]=ff; val[tot]=x;</span><br><span class="line">		cnt[tot]=<span class="number">1</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">splay</span>(u,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> u=root;</span><br><span class="line">	<span class="keyword">if</span>(!u) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">while</span>(ch[u][x&gt;val[u]]&amp;&amp;x!=val[u])</span><br><span class="line">		u=ch[u][x&gt;val[u]];</span><br><span class="line">	<span class="built_in">splay</span>(u,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">next</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> f)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">find</span>(x);</span><br><span class="line">	<span class="type">int</span> u=root;</span><br><span class="line">	<span class="keyword">if</span>(val[u]&gt;x&amp;&amp;f||val[u]&lt;x&amp;&amp;!f) <span class="keyword">return</span> u;</span><br><span class="line">	u=ch[u][f];</span><br><span class="line">	<span class="keyword">while</span>(ch[u][f^<span class="number">1</span>]) u=ch[u][f^<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">return</span> u;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">delet</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> llast=<span class="built_in">next</span>(x,<span class="number">0</span>);</span><br><span class="line">	<span class="type">int</span> nnext=<span class="built_in">next</span>(x,<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">splay</span>(llast,<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">splay</span>(nnext,llast);</span><br><span class="line">	<span class="type">int</span> del=ch[nnext][<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">if</span>(cnt[del]&gt;<span class="number">1</span>)</span><br><span class="line">		cnt[del]--,<span class="built_in">splay</span>(del,<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">else</span> ch[nnext][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">kth</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> u=root;</span><br><span class="line">	<span class="keyword">if</span>(siz[u]&lt;x) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> y=ch[u][<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">if</span>(x&gt;siz[y]+cnt[u])</span><br><span class="line">		&#123;</span><br><span class="line">			x-=siz[y]+cnt[u];</span><br><span class="line">			u=ch[u][<span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">if</span>(siz[y]&gt;=x)</span><br><span class="line">				u=y;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> val[u];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">insert</span>(<span class="number">-2147483647</span>);</span><br><span class="line">	<span class="built_in">insert</span>(<span class="number">2147483647</span>);</span><br><span class="line">	cin&gt;&gt;N;</span><br><span class="line">	<span class="keyword">while</span>(N--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> opt;</span><br><span class="line">		cin&gt;&gt;opt;</span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> ppp;</span><br><span class="line">			cin&gt;&gt;ppp;</span><br><span class="line">			<span class="built_in">insert</span>(ppp);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">2</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> ppp;</span><br><span class="line">			cin&gt;&gt;ppp;</span><br><span class="line">			<span class="built_in">delet</span>(ppp);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">3</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> ppp;</span><br><span class="line">			cin&gt;&gt;ppp;</span><br><span class="line">			<span class="built_in">find</span>(ppp);</span><br><span class="line">			cout&lt;&lt;siz[ch[root][<span class="number">0</span>]]&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">4</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> ppp;</span><br><span class="line">			cin&gt;&gt;ppp;</span><br><span class="line">			cout&lt;&lt;<span class="built_in">kth</span>(ppp+<span class="number">1</span>)&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">5</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> ppp;</span><br><span class="line">			cin&gt;&gt;ppp;</span><br><span class="line">			cout&lt;&lt;val[<span class="built_in">next</span>(ppp,<span class="number">0</span>)]&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">6</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> ppp;</span><br><span class="line">			cin&gt;&gt;ppp;</span><br><span class="line">			cout&lt;&lt;val[<span class="built_in">next</span>(ppp,<span class="number">1</span>)]&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="文艺平衡树"><a href="#文艺平衡树" class="headerlink" title="文艺平衡树"></a>文艺平衡树</h1><p>思路:1.提取区间</p>
+<p>​         2.打tag翻转</p>
+<p>（让我画个图qwqwqw）</p>
+<p>$T_n&#x3D;k*T_{n-1}+n$</p>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2022/07/24/sx2%E6%95%B0%E8%AE%BA/">
+        <span class="nav-arrow">← </span>
+        
+          (untitled)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2022/07/24/qbxtDAY2_%E6%8F%92%E5%A4%B4dp/">
+        
+          (untitled)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Utterances START -->
+      <div id="utterances"></div>
+      <script src="https://utteranc.es/client.js"
+        repo="iinattr/comitForBlogs"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async></script>    
+      <!-- Utterances END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-nav-text">引入</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-nav-text">功能</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-nav-text">实现</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%98%BE%E8%80%8C%E6%98%93%E8%A7%81"><span class="toc-nav-text">显而易见</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%96%87%E8%89%BA%E5%B9%B3%E8%A1%A1%E6%A0%91"><span class="toc-nav-text">文艺平衡树</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://iinattr.username.github.io/2022/07/24/SPLAY/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2022 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a target="_blank" rel="noopener" href="https://github.com/yanm1ng">yanm1ng</a>
+    
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      hljs.configure({useBR: true});
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="iinattr&#39;s blog">
+  <meta name="keyword" content="iinattr">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      iinattr
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+
+
+  
+  
+    
+<script src="/js/local-search.js"></script>
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>iinattr</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/series/" class="item-link">Series</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+      
+        <li class="menu-item menu-item-search right-list">
+    <a role="button" class="popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/series/" class="menu-link">Series</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+    
+      <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off"
+                    placeholder="Please enter your keyword(s) to search." spellcheck="false"
+                    type="search" class="search-input">
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa fa-times-circle"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2></h2>
+  <p class="post-date">2022-07-24</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="万字长文·三维偏序-x2F-cdq分治"><a href="#万字长文·三维偏序-x2F-cdq分治" class="headerlink" title="万字长文·三维偏序&#x2F;cdq分治"></a>万字长文·三维偏序&#x2F;cdq分治</h1><h2 id="cdq分治"><a href="#cdq分治" class="headerlink" title="cdq分治"></a>cdq分治</h2><h3 id="静态区间问题"><a href="#静态区间问题" class="headerlink" title="静态区间问题"></a>静态区间问题</h3><p>cdq分治是一种解决区间统计问题的常用方法</p>
+<p>点分治相当于吧cdq分治挪到树上</p>
+<p>cdq分治即把一个序列分为两部分 区间统计的量分为跨中点的 左边的 右边的</p>
+<p>（一下所说统计均指在区间中点）</p>
+<p>先递归处理左边的和右边的</p>
+<p>然后再寻找某种$O(n)$或较优方式统计跨中点的</p>
+<p>熟知归并排序求逆序对</p>
+<p>这就是使用cdq分治解决二维偏序的例子</p>
+<h3 id="离线的带修数据结构问题"><a href="#离线的带修数据结构问题" class="headerlink" title="离线的带修数据结构问题"></a>离线的带修数据结构问题</h3><p><strong>cdq 分治被称为 动态问题转化为静态问题的工具</strong></p>
+<p>发现离线的数据结构离线下来的操作是一个序列</p>
+<p>每个修改操作会对它后面的询问操作产生影响</p>
+<p>使用cdq分治来完成这个问题</p>
+<p>先递归处理[l,mid]，[mid+1,r]</p>
+<p>然后加入[l,mid]中操作对[mid+1,r]中询问的影响 并得出答案</p>
+<p>正确性：显然所有修改按时间顺序排序</p>
+<h4 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h4><pre><code>矩形加矩形求和¶
+这里的矩形加矩形求和就是字面意思上的矩形加矩形求和，
+让你维护一个二维平面，然后支持在一个矩形区域内加一个数字，
+每次询问一个矩形区域的和
+</code></pre>
+<p>这个问题的不带修就是经典的扫描线问题</p>
+<p>加入修改后只需按照cdq套路完成即可qwq</p>
+<h2 id="三维偏序"><a href="#三维偏序" class="headerlink" title="三维偏序"></a>三维偏序</h2><p>显然三维偏序问题是二维偏序的扩展</p>
+<p>二维偏序有两种写法：归并排序（cdq分治）和树状数组</p>
+<p>考虑结合二者</p>
+<p>先对第一维排序</p>
+<p>然后显然[l,mid]和[mid+1,r]只会在两者之间产生偏序</p>
+<p>我们可以使用双指针扫左区间和右区间 同二维偏序一样</p>
+<p>将左区间第二维小于右区间的第三维插入树状数组 将对应于左区间的右区间首个b&lt;左区间点的点的c值在树状数组中查询前缀和</p>
+<p>正确性与归并排序同理</p>
+<p>细节：对于相同点 显然二者可以互相贡献答案 而该算法显然只能计算一次 所以要去重再把重值算回</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 200005</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> a,b,c,cnt,ans=<span class="number">0</span>;</span><br><span class="line">&#125;q1[N],q2[N];</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> n,kk,asn[N];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(node x,node y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(x.a==y.a)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span>(x.b==y.b)</span><br><span class="line">      <span class="keyword">return</span> x.c&lt;y.c;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">      <span class="keyword">return</span> x.b&lt;y.b;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> x.a&lt;y.a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp2</span><span class="params">(node x,node y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(x.b==y.b)</span><br><span class="line">      <span class="keyword">return</span> x.c&lt;y.c;</span><br><span class="line">  <span class="keyword">else</span> </span><br><span class="line">    <span class="keyword">return</span> x.b&lt;y.b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">tyz</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> tr[N];</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">long</span> <span class="type">long</span> x,<span class="type">long</span> <span class="type">long</span> k)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(;x&lt;=kk;x+=(x&amp;(-x)))</span><br><span class="line">      tr[x]+=k;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">ask</span><span class="params">(<span class="type">long</span> <span class="type">long</span> x)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> ret=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(;x&gt;<span class="number">0</span>;x-=(x&amp;(-x)))</span><br><span class="line">      ret+=tr[x];</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">clear</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> i=<span class="number">1</span>;i&lt;=kk;i++) tr[i]=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;qt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">cdq</span><span class="params">(<span class="type">long</span> <span class="type">long</span> l,<span class="type">long</span> <span class="type">long</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(l==r) <span class="keyword">return</span>;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">  <span class="built_in">cdq</span>(l,mid),<span class="built_in">cdq</span>(mid+<span class="number">1</span>,r);</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> ls=l,rs=mid+<span class="number">1</span>;<span class="type">long</span> <span class="type">long</span> i=l;</span><br><span class="line">  <span class="keyword">for</span>(;i&lt;=r&amp;&amp;ls&lt;=mid&amp;&amp;rs&lt;=r;)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span>(q2[ls].b&lt;=q2[rs].b) </span><br><span class="line">      qt.<span class="built_in">change</span>(q2[ls].c,q2[ls].cnt),</span><br><span class="line">      q1[i].a=q2[ls].a,</span><br><span class="line">      q1[i].b=q2[ls].b,</span><br><span class="line">      q1[i].c=q2[ls].c,</span><br><span class="line">      q1[i].ans=q2[ls].ans,</span><br><span class="line">      q1[i].cnt=q2[ls].cnt,</span><br><span class="line">      i++,</span><br><span class="line">      ls++; </span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      q2[rs].ans+=qt.<span class="built_in">ask</span>(q2[rs].c),</span><br><span class="line">      q1[i].a=q2[rs].a,</span><br><span class="line">      q1[i].b=q2[rs].b,</span><br><span class="line">      q1[i].c=q2[rs].c,</span><br><span class="line">      q1[i].ans=q2[rs].ans,</span><br><span class="line">      q1[i].cnt=q2[rs].cnt,</span><br><span class="line">      i++,</span><br><span class="line">      rs++; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(rs&lt;=r)</span><br><span class="line">  &#123;</span><br><span class="line">    q2[i].ans+=qt.<span class="built_in">ask</span>(q2[rs].c),</span><br><span class="line">    q1[i].a=q2[rs].a,</span><br><span class="line">    q1[i].b=q2[rs].b,</span><br><span class="line">    q1[i].c=q2[rs].c,</span><br><span class="line">    q1[i].ans=q2[rs].ans,</span><br><span class="line">    q1[i].cnt=q2[rs].cnt,</span><br><span class="line">    i++;</span><br><span class="line">    rs++; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;ls;i++)</span><br><span class="line">    qt.<span class="built_in">change</span>(q2[i].c,-q2[i].cnt);</span><br><span class="line">  <span class="keyword">while</span>(ls&lt;=mid)</span><br><span class="line">  &#123;</span><br><span class="line">    q1[i].a=q2[ls].a,</span><br><span class="line">    q1[i].b=q2[ls].b,</span><br><span class="line">    q1[i].c=q2[ls].c,</span><br><span class="line">    q1[i].ans=q2[ls].ans,</span><br><span class="line">    q1[i].cnt=q2[ls].cnt,</span><br><span class="line">    i++;</span><br><span class="line">    ls++; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> kkk=l;kkk&lt;=r;kkk++)</span><br><span class="line">  &#123;</span><br><span class="line">    q2[kkk].a=q1[kkk].a,</span><br><span class="line">    q2[kkk].b=q1[kkk].b,</span><br><span class="line">    q2[kkk].c=q1[kkk].c,</span><br><span class="line">    q2[kkk].ans=q1[kkk].ans,</span><br><span class="line">    q2[kkk].cnt=q1[kkk].cnt;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;kk);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;q1[i].a,&amp;q1[i].b,&amp;q1[i].c);</span><br><span class="line">  <span class="built_in">sort</span>(q1+<span class="number">1</span>,q1+<span class="number">1</span>+n,cmp);</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> m=<span class="number">0</span>,top=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    top++;</span><br><span class="line">    <span class="keyword">if</span>(q1[i].a!=q1[i+<span class="number">1</span>].a||q1[i].b!=q1[i+<span class="number">1</span>].b||q1[i].c!=q1[i+<span class="number">1</span>].c)</span><br><span class="line">    &#123;</span><br><span class="line">      m++;</span><br><span class="line">      q2[m].a=q1[i].a;</span><br><span class="line">      q2[m].b=q1[i].b;</span><br><span class="line">      q2[m].c=q1[i].c;</span><br><span class="line">      q2[m].cnt=top;</span><br><span class="line">      top=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cdq</span>(<span class="number">1</span>,m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    asn[q2[i].ans+q2[i].cnt<span class="number">-1</span>]+=q2[i].cnt;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">long</span> <span class="type">long</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    cout&lt;&lt;asn[i]&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2022/07/24/%E4%B8%87%E5%AD%97%E9%95%BF%E6%96%87%C2%B7%E5%8A%A8%E6%80%81%E6%A0%91%E5%88%86%E6%B2%BB%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8/">
+        <span class="nav-arrow">← </span>
+        
+          (untitled)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2022/07/24/%E4%B8%87%E5%AD%97%E9%95%BF%E6%96%87%C2%B7%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8/">
+        
+          (untitled)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Utterances START -->
+      <div id="utterances"></div>
+      <script src="https://utteranc.es/client.js"
+        repo="iinattr/comitForBlogs"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async></script>    
+      <!-- Utterances END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E4%B8%87%E5%AD%97%E9%95%BF%E6%96%87%C2%B7%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F-x2F-cdq%E5%88%86%E6%B2%BB"><span class="toc-nav-text">万字长文·三维偏序&#x2F;cdq分治</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#cdq%E5%88%86%E6%B2%BB"><span class="toc-nav-text">cdq分治</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%9D%99%E6%80%81%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98"><span class="toc-nav-text">静态区间问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%A6%BB%E7%BA%BF%E7%9A%84%E5%B8%A6%E4%BF%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%97%AE%E9%A2%98"><span class="toc-nav-text">离线的带修数据结构问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90"><span class="toc-nav-text">一个例子</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F"><span class="toc-nav-text">三维偏序</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-nav-text">代码</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://iinattr.username.github.io/2022/07/24/万字长文·三维偏序·cdq分治/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2022 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a target="_blank" rel="noopener" href="https://github.com/yanm1ng">yanm1ng</a>
+    
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      hljs.configure({useBR: true});
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+
+  </body>
+</html>

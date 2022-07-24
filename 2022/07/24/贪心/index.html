@@ -175,9 +175,30 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="“如果你在浪费时间中获得了快乐-那就不算浪费时间”"><a href="#“如果你在浪费时间中获得了快乐-那就不算浪费时间”" class="headerlink" title="“如果你在浪费时间中获得了快乐 那就不算浪费时间”"></a>“如果你在浪费时间中获得了快乐 那就不算浪费时间”</h1><h2 id="–费曼"><a href="#–费曼" class="headerlink" title="–费曼"></a>–费曼</h2><h2 id="今天也要努力浪费时间呢！"><a href="#今天也要努力浪费时间呢！" class="headerlink" title="今天也要努力浪费时间呢！"></a>今天也要努力浪费时间呢！</h2><ul>
-<li>7.24<br>暑假也要回学校 但是阻挡不了我颓废的步伐！今天在qq群里度过了一整天 许多妹子把我当成妹子而加我 好开心！</li>
-</ul>
+    <section class="markdown-content"><h1 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h1><p>（我很菜 题很水 误喷）</p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>贪心算法（又称贪婪算法）是指，在对问题求解时，总是做出在当前看来是最好的选择。</p>
+<p>也就是说，不从整体最优上加以考虑，算法得到的是在某种意义上的局部最优解 	—–百度百科</p>
+<p>概括的说 贪心算法就是通过某种策略 在进行每个决策时选择依据这种策略所得的最优解 从而发展为全局最优解 </p>
+<p>这与将所有可能的决策方案计算的动态规划算法不同</p>
+<p>通常情况下 做贪心题的第一步是确认它是否有贪心解 许多动态规划题长的很想贪心如</p>
+<p>P1880 [NOI1995] 石子合并</p>
+<p>P1048 [NOIP2005 普及组] 采药</p>
+<p>据说当年P1880有大量的人因误认为此题为贪心而做错 <del>好耶！</del></p>
+<p>在想出贪心策略后一定要思考 全局最优解能否从局部最优解转移得到</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="T1-P1016-NOIP1999-提高组-旅行家的预算"><a href="#T1-P1016-NOIP1999-提高组-旅行家的预算" class="headerlink" title="T1 P1016 [NOIP1999 提高组] 旅行家的预算"></a>T1 P1016 [NOIP1999 提高组] 旅行家的预算</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>一个旅行家想驾驶汽车以最少的费用从一个城市到另一个城市（假设出发时油箱是空的）。给定两个城市之间的距离D1、汽车油箱的容量C（以升为单位）、每升汽油能行驶的距离D2、出发点每升汽油价格P和沿途油站数N（N可以为零），油站i<em>i</em>离出发点的距离Di、每升汽油价格Pi（i&#x3D;1,2,…,N<em>i</em>&#x3D;1,2,…,<em>N</em>）。计算结果四舍五入至小数点后两位。如果无法到达目的地，则输出“No Solution”。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行，D1，C，D2，P，N。</p>
+<p>接下来有N行。</p>
+<p>第i+1行，两个数字，油站i离出发点的距离Di和每升汽油价格Pi。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>所需最小费用，计算结果四舍五入至小数点后两位。如果无法到达目的地，则输出“No Solution”。</p>
+<h4 id="显而易见"><a href="#显而易见" class="headerlink" title="显而易见"></a>显而易见</h4><p>1.枚举途中经过的加油站，每经过一个加油站，计算一次花费；</p>
+<p>2.在一个加油站所需要加的油，就是能够支持它到达下一个油价比它低的加油站的量；</p>
+<p>3.如果在这个加油站即使加满油，都不能到达一个比它油价低的加油站，就把油箱加满，前往能够到达的加油站中油价最低的那个；</p>
+<p>4.如果在这个加油站即使加满油，都不能到达任意一个加油站，也不能到达终点城市，说明无解；</p>
+<p>可以看出 全局花费最少一定是在当前可选油价最低加油站中加尽量合适的油的决策后转移来的 所以贪心正确</p>
+<h3 id="悬线法"><a href="#悬线法" class="headerlink" title="悬线法"></a>悬线法</h3><p>（你也可以认为这是贪心与dp杂交的产物）<del>（那晚 贪心和dp都长大了许多）</del></p>
+<p><strong>用于求解最大带限制矩形覆盖问题</strong></p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>有效竖线：除两个端点外不覆盖任何障碍点的竖直线段</p>
+<p>悬线：上端点到达边界或障碍点的有效竖线</p>
 </section>
     <!-- Tags START -->
     
@@ -187,7 +208,7 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2022/07/23/%E4%BB%8A%E6%97%A5%E8%AE%A1%E5%88%92/">
+      <a class="nav-left" href="/2022/07/24/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8/">
         <span class="nav-arrow">← </span>
         
           (untitled)
@@ -195,7 +216,7 @@
       </a>
     
     
-      <a class="nav-right" href="/2022/07/24/%E5%8F%AF%E8%83%BD%E6%98%AF%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%A8%A1%E6%9D%BF%E5%85%A8%E5%AE%B6%E6%A1%B6/">
+      <a class="nav-right" href="/2022/07/24/%E4%B8%87%E5%AD%97%E9%95%BF%E6%96%87%C2%B7%E5%8A%A8%E6%80%81%E6%A0%91%E5%88%86%E6%B2%BB%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8/">
         
           (untitled)
         
@@ -230,7 +251,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E2%80%9C%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%9C%A8%E6%B5%AA%E8%B4%B9%E6%97%B6%E9%97%B4%E4%B8%AD%E8%8E%B7%E5%BE%97%E4%BA%86%E5%BF%AB%E4%B9%90-%E9%82%A3%E5%B0%B1%E4%B8%8D%E7%AE%97%E6%B5%AA%E8%B4%B9%E6%97%B6%E9%97%B4%E2%80%9D"><span class="toc-nav-text">“如果你在浪费时间中获得了快乐 那就不算浪费时间”</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E2%80%93%E8%B4%B9%E6%9B%BC"><span class="toc-nav-text">–费曼</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BB%8A%E5%A4%A9%E4%B9%9F%E8%A6%81%E5%8A%AA%E5%8A%9B%E6%B5%AA%E8%B4%B9%E6%97%B6%E9%97%B4%E5%91%A2%EF%BC%81"><span class="toc-nav-text">今天也要努力浪费时间呢！</span></a></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E8%B4%AA%E5%BF%83"><span class="toc-nav-text">贪心</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-nav-text">概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-nav-text">例题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#T1-P1016-NOIP1999-%E6%8F%90%E9%AB%98%E7%BB%84-%E6%97%85%E8%A1%8C%E5%AE%B6%E7%9A%84%E9%A2%84%E7%AE%97"><span class="toc-nav-text">T1 P1016 [NOIP1999 提高组] 旅行家的预算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-nav-text">题目描述</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-nav-text">输入格式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-nav-text">输出格式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%98%BE%E8%80%8C%E6%98%93%E8%A7%81"><span class="toc-nav-text">显而易见</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%82%AC%E7%BA%BF%E6%B3%95"><span class="toc-nav-text">悬线法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-nav-text">定义</span></a></li></ol></li></ol></li></ol></li></ol>
     
   </div>
 </aside>
@@ -240,7 +261,7 @@
 
 <script>
   (function () {
-    var url = 'http://iinattr.username.github.io/2022/07/24/日记/';
+    var url = 'http://iinattr.username.github.io/2022/07/24/贪心/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
